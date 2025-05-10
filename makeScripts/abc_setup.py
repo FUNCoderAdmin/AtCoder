@@ -8,7 +8,7 @@ TEMPLATE_NAME = 'script.{ext}'
 
 def main():
     contest_id = input("コンテストのID (e.g., abc123 or 123): ").strip()
-    contest_id = contest_id if contest_id[0:3] == "abc" else f"abc{int(contest_id)}"
+    contest_id = f"{contest_id[0:3]}{int(contest_id[3::])}" if contest_id[0:3] == "abc" else f"abc{int(contest_id)}"
     problems = input("問題のID (e.g., a b c): ").strip().split()
     language = input("作成するプログラミング言語 (e.g., cpp, py, rs): ").strip()
     
@@ -38,7 +38,7 @@ def main():
 
     
     for prob in problems:
-        base_dir = os.path.join(contest_id, prob.lower())
+        base_dir = os.path.join("abc", contest_id, prob.lower())
         os.makedirs(base_dir, exist_ok=True)
         
         pattern = os.path.join(base_dir, f"solution_*.{ext}")
