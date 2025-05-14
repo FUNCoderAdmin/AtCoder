@@ -8,7 +8,7 @@ TEMPLATE_NAME = 'script.{ext}'
 
 def main():
     contest_id = input("コンテストのID (e.g., abc123 or 123): ").strip()
-    contest_id = f"{contest_id[0:3]}{int(contest_id[3::])}" if contest_id[0:3] == "abc" else f"abc{int(contest_id)}"
+    contest_id = f"{contest_id[0:3]}{int(contest_id[3::]):03}" if contest_id[0:3] == "abc" else f"abc{int(contest_id):03}"
     problems = input("問題のID (e.g., a b c): ").strip().split()
     language = input("作成するプログラミング言語 (e.g., cpp, py, rs): ").strip()
     
