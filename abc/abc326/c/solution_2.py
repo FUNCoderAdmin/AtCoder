@@ -1,3 +1,4 @@
+# https://atcoder.jp/contests/abc326/submissions/65807493
 N, M = map(int, input().split())
 A = list(map(int, input().split()))
 A.sort()
